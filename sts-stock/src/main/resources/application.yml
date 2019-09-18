@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: sts-stock
+  data:
+    mongodb:
+      database: stock_a
+      host: 127.0.0.1 #39.108.217.50
+      port: 27017
+      username: collect
+      password: collect
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    prefer-same-zone-eureka: true
+    registry-fetch-interval-seconds: 5 # 向注册服务获取当前服务列表（缺省为30s）
