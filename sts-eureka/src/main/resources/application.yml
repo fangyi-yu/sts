@@ -1,0 +1,23 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: sts-eureka
+
+eureka:
+  server:
+    enable-self-preservation: false # 本地进行开发时，由于服务频繁重启，可以关闭保护机制，以确保注册中心可以 将不可用的实例正确剔除\
+  instance:
+    hostname: discovery
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+security:
+  basic:
+    enabled: true               # 开启基于HTTP basic的认证
+  user:
+    name: fangyi.yu         # 配置登录的账号
+    password: 123456     # 配置登录的密码
