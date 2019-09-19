@@ -7,13 +7,15 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: true #当值为true时，就可以采用服务名的路由策略
           lowerCaseServiceId: true
-#      routes:
-#      - id: sts-stock
-#        url: http://localhost:8081
-#        predicates:
-#        - Method=GET
+      routes:
+      - id: sts-stock
+        uri: lb://STS-STOCK
+        predicates:
+          - Path=/stock/**
+        filters:
+          - StripPrefix=1
 
 eureka:
   client:

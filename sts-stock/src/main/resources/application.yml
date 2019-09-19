@@ -11,6 +11,9 @@ spring:
       port: 27017
       username: collect
       password: collect
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 
 eureka:
@@ -19,3 +22,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     prefer-same-zone-eureka: true
     registry-fetch-interval-seconds: 5 # 向注册服务获取当前服务列表（缺省为30s）
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000 #feign 超时默认为1000毫秒
