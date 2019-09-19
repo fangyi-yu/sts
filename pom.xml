@@ -12,6 +12,7 @@
         <module>sts-eureka</module>
         <module>sts-futures</module>
         <module>sts-stock</module>
+        <module>sts-gateway</module>
     </modules>
 
     <parent>
