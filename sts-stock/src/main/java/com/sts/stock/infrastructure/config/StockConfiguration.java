@@ -1,5 +1,6 @@
 package com.sts.stock.infrastructure.config;
 
+import lombok.ToString;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by fangyi on 2019/9/19
  */
+
 @Configuration
 public class StockConfiguration {
 

@@ -13,6 +13,7 @@
         <module>sts-futures</module>
         <module>sts-stock</module>
         <module>sts-gateway</module>
+        <module>sts-config</module>
     </modules>
 
     <parent>

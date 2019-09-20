@@ -1,0 +1,31 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: sts-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fangyi-yu/sts-rep.git
+          basedir: /basic-config/config-repo #本地仓库地址
+          clone-on-start: true # 启动时就clone Git仓库
+          force-pull: true
+          default-label: master
+          search-paths: dev,pro
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 心跳时间，即服务续约间隔时间（缺省为30s）
+    lease-expiration-duration-in-seconds: 10 # 发呆时间，即服务续约到期时间（缺省为90s）
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    prefer-same-zone-eureka: true
+    registry-fetch-interval-seconds: 5 # 向注册服务获取当前服务列表（缺省为30s）
+  #instance:
+  #  prefer-ip-address: true
+  #  ip-address: 192.168.1.53
+
+logging:
+  file: logs/${spring.application.name}.log # 日志文件名称

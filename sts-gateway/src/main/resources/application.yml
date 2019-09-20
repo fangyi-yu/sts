@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8998
 spring:
   application:
     name: sts-gateway

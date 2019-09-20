@@ -1,12 +1,12 @@
-package com.daoming.review.config.wrapper;
+package com.sts.stock.infrastructure.config.wrapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -14,41 +14,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Created by fangyi on 2019/9/16
+ * Created by fangyi on 2019/9/20
  */
 @Slf4j
 @Aspect
 @Component
 public class RequestApiAspect {
 
-//    private static final Logger logger =  LoggerFactory.getLogger(RequestApiAspect.class);
-
     private static final boolean logEnabled = log.isInfoEnabled();
 
-    /**
-
-     * 定义一个切入点.
-
-     * 解释下：
-
-     *
-
-     * ~ 第一个 * 代表任意修饰符及任意返回值.
-
-     * ~ 第二个 * 任意包名
-
-     * ~ 第三个 * 代表任意方法.
-
-     * ~ 第四个 * 定义在web包或者子包
-
-     * ~ 第五个 * 任意方法
-
-     * ~ .. 匹配任意数量的参数.
-
-     */
 
 //    @Pointcut("execution( * com..controller..*.*(..))")
-    @Pointcut("execution(* com.daoming.*.controller..*.*(..))")
+    @Pointcut("execution(* com.sts.*.controller..*.*(..))")
     public void webLog(){}
 
 

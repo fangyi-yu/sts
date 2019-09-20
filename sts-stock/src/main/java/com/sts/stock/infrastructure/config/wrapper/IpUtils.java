@@ -1,11 +1,11 @@
-package com.daoming.review.config.wrapper;
+package com.sts.stock.infrastructure.config.wrapper;
 
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by fangyi on 2019/9/16
+ * Created by fangyi on 2019/9/20
  */
 public class IpUtils {
 

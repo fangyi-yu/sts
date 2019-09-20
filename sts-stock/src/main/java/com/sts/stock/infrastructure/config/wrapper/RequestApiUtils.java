@@ -1,4 +1,4 @@
-package com.daoming.review.config.wrapper;
+package com.sts.stock.infrastructure.config.wrapper;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.ArrayUtils;
@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 import java.util.Enumeration;
 
 /**
- * Created by fangyi on 2019/9/14
+ * Created by fangyi on 2019/9/20
  */
 public class RequestApiUtils {
 
