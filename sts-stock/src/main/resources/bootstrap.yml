@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+#      discovery:
+#        enabled: true # 开启通过服务来访问配置中心服务
+#        service-id: sts-config # 配置中心注册的服务名
+      profile: dev #配置在本机环境变量中，dev-in表示内网开发环境，dev-out表示外网开发环境
+      label: master #最好要指定label，否则在cloud bus refresh的时候，有一定的概率找不到配置文件，进而无法更新配置信息
+      uri: http://localhost:8030/
+#      name: ${spring.application.name}

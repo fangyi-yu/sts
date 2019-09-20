@@ -1,0 +1,25 @@
+server:
+  port: 8998
+spring:
+  application:
+    name: sts-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #当值为true时，就可以采用服务名的路由策略
+          lowerCaseServiceId: true
+      routes:
+      - id: sts-stock
+        uri: lb://STS-STOCK
+        predicates:
+          - Path=/stock/**
+        filters:
+          - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

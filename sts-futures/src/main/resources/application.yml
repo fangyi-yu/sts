@@ -1,0 +1,23 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: sts-futures
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/futures?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    username: fangyi_yu
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    prefer-same-zone-eureka: true
+    registry-fetch-interval-seconds: 5 # 向注册服务获取当前服务列表（缺省为30s）
+
+logging:
+  file: logs/${spring.application.name}.log
